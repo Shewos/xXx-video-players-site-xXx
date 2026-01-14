@@ -297,26 +297,47 @@
             const playersDiv = document.getElementById('players');
             playersDiv.innerHTML = '';
             
-            const container = document.createElement('div');
-            container.className = 'player-container';
+            // Пробуем несколько вариантов плееров
+            const players = [
+                {
+                    name: `🎌 ${title} - Вариант 1`,
+                    url: `https://kodik.info/serial/${shikimoriId}/720p`,
+                    note: `Прямая ссылка на плеер`
+                },
+                {
+                    name: `🎌 ${title} - Вариант 2`,
+                    url: `https://aniqit.com/serial/${shikimoriId}/ee60f81c78cf6e8d499901f84b90a6b7/720p`,
+                    note: `Альтернативный домен Kodik`
+                },
+                {
+                    name: `🎌 ${title} - Вариант 3`,
+                    url: `https://kodik.cc/serial/${shikimoriId}/720p`,
+                    note: `Ещё один домен Kodik`
+                }
+            ];
             
-            const titleEl = document.createElement('h3');
-            titleEl.textContent = `🎌 ${title}`;
-            
-            const note = document.createElement('div');
-            note.className = 'warning';
-            note.textContent = `✅ Найдено через Shikimori (ID: ${shikimoriId})`;
-            
-            container.appendChild(titleEl);
-            container.appendChild(note);
-            
-            const iframe = document.createElement('iframe');
-            iframe.src = `https://kodik.info/find-player?shikimori_id=${shikimoriId}&token=${kodikAnimeToken}`;
-            iframe.allowFullscreen = true;
-            iframe.allow = 'autoplay; fullscreen';
-            
-            container.appendChild(iframe);
-            playersDiv.appendChild(container);
+            players.forEach(player => {
+                const container = document.createElement('div');
+                container.className = 'player-container';
+                
+                const titleEl = document.createElement('h3');
+                titleEl.textContent = player.name;
+                
+                const note = document.createElement('div');
+                note.className = 'warning';
+                note.textContent = `ℹ️ ${player.note} (Shikimori ID: ${shikimoriId})`;
+                
+                container.appendChild(titleEl);
+                container.appendChild(note);
+                
+                const iframe = document.createElement('iframe');
+                iframe.src = player.url;
+                iframe.allowFullscreen = true;
+                iframe.allow = 'autoplay; fullscreen';
+                
+                container.appendChild(iframe);
+                playersDiv.appendChild(container);
+            });
         }
         
         // Enter для поиска

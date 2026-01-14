@@ -206,33 +206,21 @@
             
             // ============ СПИСОК ПЛЕЕРОВ ============
             const players = [
-                // Агрегаторы (работают сразу)
-                {
-                    name: '🔗 Reyohoho (Агрегатор)',
-                    url: `https://api4.rhserv.vu/player/index.php?kp=${kpId}`,
-                    note: 'Bhcesh + Kinobox - несколько плееров'
-                },
-                {
-                    name: '🎯 Kinobox',
-                    url: `https://kinobox.tv/embed/kinopoisk/${kpId}`,
-                    note: 'Показывает Kodik, VideoCDN, Collaps'
-                },
-                
-                // Прямые плееры  
+                // Основные плееры (требуют API ключ)
                 {
                     name: '🎬 Kodik',
-                    url: `https://kodik.biz/find-player?kinopoisk_id=${kpId}`,
-                    note: 'Для доступа напишите на support@kodik.biz'
+                    url: `https://kodik.info/find-player?kinopoisk_id=${kpId}`,
+                    note: '⚠️ Требует API ключ - напишите на support@kodik.biz с доменом: shewos.github.io'
                 },
                 {
-                    name: '🔴 Collaps',
-                    url: `https://collaps.cc/embed/kinopoisk/${kpId}`,
-                    note: 'Публичный плеер'
+                    name: '📺 HDRezka',
+                    url: `https://rezka.ag/search/?do=search&subaction=search&q=${kpId}`,
+                    note: '⚠️ Может не работать без регистрации домена'
                 },
                 {
-                    name: '🎥 VideoCDN',
-                    url: `https://videocdn.tv/embed/kinopoisk/${kpId}`,
-                    note: 'Может требовать API ключ'
+                    name: '🎥 Плеер.нет',
+                    url: `https://pleer.net/search?kp=${kpId}`,
+                    note: '⚠️ Экспериментальный плеер'
                 }
             ];
             

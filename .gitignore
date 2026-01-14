@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Secrets (не должно быть в этой папке, но на всякий случай)
+.env
+app_secrets.py
+settings.json
+
+# Logs
+*.log
+
+# Temporary
+*.tmp
+*.bak

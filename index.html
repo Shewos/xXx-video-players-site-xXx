@@ -206,67 +206,33 @@
             
             // ============ СПИСОК ПЛЕЕРОВ ============
             const players = [
-                // Агрегаторы (показывают несколько плееров)
+                // Агрегаторы (работают сразу)
                 {
-                    name: '🎯 Kinobox (Агрегатор)',
+                    name: '🔗 Reyohoho (Агрегатор)',
+                    url: `https://api4.rhserv.vu/player/index.php?kp=${kpId}`,
+                    note: 'Bhcesh + Kinobox - несколько плееров'
+                },
+                {
+                    name: '🎯 Kinobox',
                     url: `https://kinobox.tv/embed/kinopoisk/${kpId}`,
                     note: 'Показывает Kodik, VideoCDN, Collaps'
                 },
-                {
-                    name: '🔗 Reyohoho',
-                    url: `https://api4.rhserv.vu/player/index.php?kp=${kpId}`,
-                    note: 'Bhcesh + Kinobox агрегатор'
-                },
                 
-                // Прямые плееры
+                // Прямые плееры  
                 {
                     name: '🎬 Kodik',
                     url: `https://kodik.biz/find-player?kinopoisk_id=${kpId}`,
-                    note: 'Аниме, сериалы, фильмы'
-                },
-                {
-                    name: '📺 HDRezka Player',
-                    url: `https://hdrezka.me/search/?do=search&subaction=search&q=${kpId}`,
-                    note: 'Требует регистрацию домена'
-                },
-                {
-                    name: '🎥 VideoCDN',
-                    url: `https://videocdn.tv/embed/kinopoisk/${kpId}`,
-                    note: 'API требует ключ для некоторых функций'
+                    note: 'Для доступа напишите на support@kodik.biz'
                 },
                 {
                     name: '🔴 Collaps',
                     url: `https://collaps.cc/embed/kinopoisk/${kpId}`,
-                    note: 'Работает с КП ID'
+                    note: 'Публичный плеер'
                 },
                 {
-                    name: '🌐 Alloha',
-                    url: `https://alloha.video/?kinopoisk=${kpId}`,
-                    note: 'Требует регистрацию домена'
-                },
-                
-                // Специализированные (аниме)
-                {
-                    name: '🎌 Anilibria Player',
-                    url: `https://anilibria.tv/public/api/index.php?query=${kpId}`,
-                    note: 'Только аниме с русской озвучкой'
-                },
-                {
-                    name: '🍭 Yummyanime Player',
-                    url: `https://yummyanime.club/search/?do=search&subaction=search&story=${kpId}`,
-                    note: 'Аниме онлайн'
-                },
-                
-                // Дополнительные
-                {
-                    name: '🎙️ Kinogolos',
-                    url: `https://kinogolos.ru/search/?story=${kpId}`,
-                    note: 'Озвучка фильмов и сериалов'
-                },
-                {
-                    name: '🎞️ Filmix',
-                    url: `https://filmix.ac/search/${kpId}`,
-                    note: 'Требует VPN или прокси'
+                    name: '🎥 VideoCDN',
+                    url: `https://videocdn.tv/embed/kinopoisk/${kpId}`,
+                    note: 'Может требовать API ключ'
                 }
             ];
             

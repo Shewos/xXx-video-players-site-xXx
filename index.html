@@ -205,22 +205,27 @@
             document.getElementById('current-kp').textContent = kpId;
             
             // ============ СПИСОК ПЛЕЕРОВ ============
+            // Автоматически полученный токен Kodik через anime-parsers-ru
+            const kodikToken = '41dd95f84c21719b09d6c71182237a25';
+            
             const players = [
-                // Основные плееры (требуют API ключ)
+                // Основной плеер с токеном
                 {
-                    name: '🎬 Kodik',
-                    url: `https://kodik.info/find-player?kinopoisk_id=${kpId}`,
-                    note: '⚠️ Требует API ключ - напишите на support@kodik.biz с доменом: shewos.github.io'
+                    name: '🎬 Kodik (с токеном)',
+                    url: `https://kodik.biz/search/${kpId}?with_material_data=true&token=${kodikToken}`,
+                    note: '✅ Работает с автоматическим токеном'
                 },
+                // Альтернативный формат
                 {
-                    name: '📺 HDRezka',
-                    url: `https://rezka.ag/search/?do=search&subaction=search&q=${kpId}`,
-                    note: '⚠️ Может не работать без регистрации домена'
+                    name: '🎬 Kodik Player',
+                    url: `https://kodik.info/find-player?kinopoisk_id=${kpId}&token=${kodikToken}`,
+                    note: '✅ Прямой поиск плеера'
                 },
+                // Запасной без токена
                 {
-                    name: '🎥 Плеер.нет',
-                    url: `https://pleer.net/search?kp=${kpId}`,
-                    note: '⚠️ Экспериментальный плеер'
+                    name: '📺 Kodik (без токена)',
+                    url: `https://kodik.biz/find-player?kinopoisk_id=${kpId}`,
+                    note: '⚠️ Может не работать без токена'
                 }
             ];
             
